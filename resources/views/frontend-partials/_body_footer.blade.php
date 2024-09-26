@@ -99,6 +99,6 @@
 
     </div>
     <div class="text-center footer-content footer-bottom copyright">
-        {{ $app_settings->site_copyright ?? $dummy_data }}
+        {{-- {{ $app_settings->site_copyright ?? $dummy_data }} --}}
     </div>
 </footer>

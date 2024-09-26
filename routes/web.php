@@ -53,7 +53,7 @@ Route::get('/mqtt/subscribe/{topic}', [ HomeController::class, 'SubscribetoTopic
 
 //Auth pages Routs
 Route::group(['prefix' => 'auth'], function() {
-    Route::get('login', [HomeController::class, 'authLogin'])->name('auth.login');
+    Route::get('/', [HomeController::class, 'authLogin'])->name('auth.login');
     Route::get('register', [HomeController::class, 'authRegister'])->name('auth.register');
     Route::get('recover-password', [HomeController::class, 'authRecoverPassword'])->name('auth.recover-password');
     Route::get('confirm-email', [HomeController::class, 'authConfirmEmail'])->name('auth.confirm-email');
@@ -178,7 +178,7 @@ Route::group(['middleware' => ['auth', 'verified', 'admin']], function()
 
 Route::get('/ajax-list',[ HomeController::class, 'getAjaxList' ])->name('ajax-list');
 
-Route::get('/', [FrontendController::class, 'index'])->name('browse');
+// Route::get('/', [FrontendController::class, 'index'])->name('browse');
 Route::get('termofservice', [FrontendController::class, 'termofservice'])->name('termofservice');
 Route::get('privacypolicy', [FrontendController::class, 'privacypolicy'])->name('privacypolicy');
 Route::get('page/{slug}', [FrontendController::class, 'page'])->name('pages');
