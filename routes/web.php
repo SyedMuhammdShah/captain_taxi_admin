@@ -66,7 +66,7 @@ Route::group(['middleware' => ['auth', 'verified', 'admin']], function()
 {
     // Route::get('/', [HomeController::class, 'index']);
     Route::get('/home', [HomeController::class, 'index'])->name('home');
-
+Route::get('/', [HomeController::class, 'authLogin'])->name('auth.login');
     Route::group(['namespace' => '' ], function () {
         Route::resource('permission', PermissionController::class);
         Route::get('permission/add/{type}',[ PermissionController::class,'addPermission' ])->name('permission.add');
